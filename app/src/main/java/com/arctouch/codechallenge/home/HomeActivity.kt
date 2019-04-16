@@ -3,6 +3,9 @@ package com.arctouch.codechallenge.home
 import android.os.Bundle
 import android.view.View
 import com.arctouch.codechallenge.R
+import com.arctouch.codechallenge.api.API_KEY
+import com.arctouch.codechallenge.api.DEFAULT_LANGUAGE
+import com.arctouch.codechallenge.api.DEFAULT_REGION
 import com.arctouch.codechallenge.api.TmdbApi
 import com.arctouch.codechallenge.base.BaseActivity
 import com.arctouch.codechallenge.data.Cache
@@ -16,7 +19,7 @@ class HomeActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_activity)
 
-        api.upcomingMovies(TmdbApi.API_KEY, TmdbApi.DEFAULT_LANGUAGE, 1, TmdbApi.DEFAULT_REGION)
+        api.upcomingMovies(API_KEY, DEFAULT_LANGUAGE, 1, DEFAULT_REGION)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {

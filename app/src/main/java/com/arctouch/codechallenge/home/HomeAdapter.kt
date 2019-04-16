@@ -1,9 +1,12 @@
 package com.arctouch.codechallenge.home
 
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.arctouch.codechallenge.Details.DetailsMovieActivity
 import com.arctouch.codechallenge.R
 import com.arctouch.codechallenge.model.Movie
 import com.arctouch.codechallenge.util.MovieImageUrlBuilder
@@ -21,6 +24,11 @@ class HomeAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<HomeAd
             itemView.titleTextView.text = movie.title
             itemView.genresTextView.text = movie.genres?.joinToString(separator = ", ") { it.name }
             itemView.releaseDateTextView.text = movie.releaseDate
+            itemView.cardMovie.setOnClickListener{
+                val detailIntent = Intent(itemView.context, DetailsMovieActivity::class.java)
+                detailIntent.putExtra("id",movie.id)
+                itemView.context.startActivity(detailIntent)
+            }
 
             Glide.with(itemView)
                 .load(movie.posterPath?.let { movieImageUrlBuilder.buildPosterUrl(it) })
@@ -37,4 +45,6 @@ class HomeAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<HomeAd
     override fun getItemCount() = movies.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(movies[position])
+
+
 }

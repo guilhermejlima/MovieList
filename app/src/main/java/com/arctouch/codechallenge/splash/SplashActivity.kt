@@ -3,6 +3,8 @@ package com.arctouch.codechallenge.splash
 import android.content.Intent
 import android.os.Bundle
 import com.arctouch.codechallenge.R
+import com.arctouch.codechallenge.api.API_KEY
+import com.arctouch.codechallenge.api.DEFAULT_LANGUAGE
 import com.arctouch.codechallenge.api.TmdbApi
 import com.arctouch.codechallenge.base.BaseActivity
 import com.arctouch.codechallenge.data.Cache
@@ -16,7 +18,7 @@ class SplashActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash_activity)
 
-        api.genres(TmdbApi.API_KEY, TmdbApi.DEFAULT_LANGUAGE)
+        api.genres(API_KEY, DEFAULT_LANGUAGE)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
