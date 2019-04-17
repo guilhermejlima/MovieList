@@ -1,5 +1,6 @@
 package com.arctouch.codechallenge.home
 
+import android.graphics.Movie
 import android.os.Bundle
 import android.view.View
 import com.arctouch.codechallenge.R
@@ -13,21 +14,25 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.home_activity.*
 
-class HomeActivity : BaseActivity() {
+class HomeActivity:BaseActivity(),HomeInterface.View {
 
+    lateinit var homePresenter: HomePresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_activity)
+        homePresenter = HomePresenter(this)
+        homePresenter.onCreateCalled()
 
-        api.upcomingMovies(API_KEY, DEFAULT_LANGUAGE, 1, DEFAULT_REGION)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe {
-                val moviesWithGenres = it.results.map { movie ->
-                    movie.copy(genres = Cache.genres.filter { movie.genreIds?.contains(it.id) == true })
-                }
-                recyclerView.adapter = HomeAdapter(moviesWithGenres)
-                progressBar.visibility = View.GONE
-            }
     }
+
+    override fun createAdapter(moviesWithGenres:List<com.arctouch.codechallenge.model.Movie>) {
+        recyclerView.adapter = HomeAdapter(moviesWithGenres)
+
+    }
+
+    override fun setProgressBar(status:Int) {
+        progressBar.visibility = status
+    }
+
+
 }
