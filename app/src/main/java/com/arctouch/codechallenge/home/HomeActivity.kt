@@ -1,20 +1,11 @@
 package com.arctouch.codechallenge.home
 
-import android.graphics.Movie
 import android.os.Bundle
-import android.view.View
+import android.support.v7.app.AppCompatActivity
 import com.arctouch.codechallenge.R
-import com.arctouch.codechallenge.api.API_KEY
-import com.arctouch.codechallenge.api.DEFAULT_LANGUAGE
-import com.arctouch.codechallenge.api.DEFAULT_REGION
-import com.arctouch.codechallenge.api.TmdbApi
-import com.arctouch.codechallenge.base.BaseActivity
-import com.arctouch.codechallenge.data.Cache
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.home_activity.*
 
-class HomeActivity:BaseActivity(),HomeInterface.View {
+class HomeActivity:AppCompatActivity(),HomeInterface.View {
 
     lateinit var homePresenter: HomePresenter
     override fun onCreate(savedInstanceState: Bundle?) {

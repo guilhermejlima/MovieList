@@ -1,15 +1,15 @@
 package com.arctouch.codechallenge.Details
 
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import com.arctouch.codechallenge.R
-import com.arctouch.codechallenge.base.BaseActivity
 import com.arctouch.codechallenge.model.Movie
 import com.arctouch.codechallenge.util.MovieImageUrlBuilder
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_details_movie.*
 
 
-class DetailsMovieActivity : BaseActivity(), DetailsMovieInterface.View {
+class DetailsMovieActivity: AppCompatActivity(),DetailsMovieInterface.View {
 
 
     private val movieImageUrlBuilder = MovieImageUrlBuilder()

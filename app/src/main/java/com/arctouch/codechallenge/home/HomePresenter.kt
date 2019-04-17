@@ -1,20 +1,23 @@
 package com.arctouch.codechallenge.home
 
-import android.util.Log
 import android.view.View
-import com.arctouch.codechallenge.api.API_KEY
-import com.arctouch.codechallenge.api.DEFAULT_LANGUAGE
-import com.arctouch.codechallenge.api.DEFAULT_REGION
-import com.arctouch.codechallenge.base.BaseActivity
+import com.arctouch.codechallenge.api.*
 import com.arctouch.codechallenge.data.Cache
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 
-class HomePresenter(private val view: HomeInterface.View): BaseActivity(){
+class HomePresenter(private val view: HomeInterface.View){
+
 
     fun onCreateCalled(){
-        loadGenres()
+        val client = Client()
+        val api = client.getClient().create(TmdbApi::class.java)
+        loadGenres(api)
+        loadMovies(api)
+    }
+
+    private fun loadMovies(api: TmdbApi){
         api.upcomingMovies(API_KEY, DEFAULT_LANGUAGE, 1, DEFAULT_REGION)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -28,7 +31,7 @@ class HomePresenter(private val view: HomeInterface.View): BaseActivity(){
                 }
     }
 
-    private fun loadGenres(){
+    private fun loadGenres(api: TmdbApi){
         api.genres(API_KEY, DEFAULT_LANGUAGE)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
