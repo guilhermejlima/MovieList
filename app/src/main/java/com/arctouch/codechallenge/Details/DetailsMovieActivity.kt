@@ -3,6 +3,7 @@ package com.arctouch.codechallenge.Details
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.arctouch.codechallenge.R
+import com.arctouch.codechallenge.data.Repository
 import com.arctouch.codechallenge.model.Movie
 import com.arctouch.codechallenge.util.MovieImageUrlBuilder
 import com.squareup.picasso.Picasso
@@ -14,11 +15,15 @@ class DetailsMovieActivity: AppCompatActivity(),DetailsMovieInterface.View {
 
     private val movieImageUrlBuilder = MovieImageUrlBuilder()
     lateinit var detailMoviePresenter: DetailsMoviePresenter
+    lateinit var repository: Repository
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_movie)
         detailMoviePresenter = DetailsMoviePresenter(this)
-        detailMoviePresenter.onCreateCalled()
+        repository = Repository()
+        detailMoviePresenter.onCreateCalled(repository)
 
     }
 
