@@ -11,7 +11,7 @@
     android:clickable="true"
     android:focusable="true">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardMovie"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -23,12 +23,16 @@
             android:adjustViewBounds="true"
             android:importantForAccessibility="no"
             android:scaleType="fitCenter"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/ic_image_placeholder" />
 
         <TextView
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/posterImageView"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_toEndOf="@id/posterImageView"
@@ -46,6 +50,8 @@
             android:layout_marginStart="8dp"
             android:layout_toEndOf="@id/posterImageView"
             android:ellipsize="end"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView"
+            app:layout_constraintLeft_toRightOf="@id/posterImageView"
             android:maxLines="2"
             android:textSize="14sp"
             tools:text="Drama, Romance, Thriller" />
@@ -54,14 +60,15 @@
             android:id="@+id/releaseDateTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
-            android:layout_toEndOf="@id/posterImageView"
+            app:layout_constraintTop_toBottomOf="@id/genresTextView"
+            app:layout_constraintLeft_toRightOf="@id/posterImageView"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
             android:textSize="12sp"
             android:textStyle="italic"
             tools:text="19/12/1997" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
