@@ -6,6 +6,7 @@ import com.guilherme.movieList.data.Repository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
+
 class DetailsMoviePresenter(
 
     private val view: DetailsMovieInterface.View){
@@ -20,10 +21,7 @@ class DetailsMoviePresenter(
         repository.callMovie(api,view.receiveId())
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe {
-                view.createDetailScreen(it)
-
-            }
+                .subscribe { result -> view.createDetailScreen(result) }
     }
 
 }

@@ -20,10 +20,11 @@ class DetailsMovieActivity: AppCompatActivity(),DetailsMovieInterface.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details_movie)
         detailMoviePresenter = DetailsMoviePresenter(this)
         repository = Repository()
         detailMoviePresenter.onCreateCalled(repository)
+
+        setContentView(R.layout.activity_details_movie)
 
     }
 
