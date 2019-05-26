@@ -1,7 +1,7 @@
 package com.guilherme.movieList.home
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.guilherme.movieList.R
 import com.guilherme.movieList.data.Repository
 import kotlinx.android.synthetic.main.home_activity.*

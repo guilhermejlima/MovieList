@@ -1,7 +1,7 @@
 package com.guilherme.movieList.Details
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.guilherme.movieList.R
 import com.guilherme.movieList.data.Repository
 import com.guilherme.movieList.model.Movie
