@@ -1,4 +1,4 @@
-package com.arctouch.codechallenge
+package com.guilherme.movieList
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

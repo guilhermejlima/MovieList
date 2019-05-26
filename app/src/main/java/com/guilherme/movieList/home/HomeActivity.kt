@@ -1,9 +1,9 @@
-package com.arctouch.codechallenge.home
+package com.guilherme.movieList.home
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.arctouch.codechallenge.R
-import com.arctouch.codechallenge.data.Repository
+import com.guilherme.movieList.R
+import com.guilherme.movieList.data.Repository
 import kotlinx.android.synthetic.main.home_activity.*
 
 class HomeActivity:AppCompatActivity(),HomeInterface.View {
@@ -19,7 +19,7 @@ class HomeActivity:AppCompatActivity(),HomeInterface.View {
 
     }
 
-    override fun createAdapter(moviesWithGenres:List<com.arctouch.codechallenge.model.Movie>) {
+    override fun createAdapter(moviesWithGenres:List<com.guilherme.movieList.model.Movie>) {
         recyclerView.adapter = HomeAdapter(moviesWithGenres)
 
     }

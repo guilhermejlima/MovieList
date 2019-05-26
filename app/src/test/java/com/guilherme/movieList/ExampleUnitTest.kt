@@ -1,4 +1,4 @@
-package com.arctouch.codechallenge
+package com.guilherme.movieList
 
 import org.junit.Test
 

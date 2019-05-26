@@ -1,6 +1,6 @@
-package com.arctouch.codechallenge.Details
+package com.guilherme.movieList.Details
 
-import com.arctouch.codechallenge.model.Movie
+import com.guilherme.movieList.model.Movie
 
 interface DetailsMovieInterface {
     interface View{

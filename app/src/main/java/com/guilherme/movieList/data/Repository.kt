@@ -1,12 +1,12 @@
-package com.arctouch.codechallenge.data
+package com.guilherme.movieList.data
 
-import com.arctouch.codechallenge.api.API_KEY
-import com.arctouch.codechallenge.api.DEFAULT_LANGUAGE
-import com.arctouch.codechallenge.api.DEFAULT_REGION
-import com.arctouch.codechallenge.api.TmdbApi
-import com.arctouch.codechallenge.model.GenreResponse
-import com.arctouch.codechallenge.model.Movie
-import com.arctouch.codechallenge.model.UpcomingMoviesResponse
+import com.guilherme.movieList.api.API_KEY
+import com.guilherme.movieList.api.DEFAULT_LANGUAGE
+import com.guilherme.movieList.api.DEFAULT_REGION
+import com.guilherme.movieList.api.TmdbApi
+import com.guilherme.movieList.model.GenreResponse
+import com.guilherme.movieList.model.Movie
+import com.guilherme.movieList.model.UpcomingMoviesResponse
 import io.reactivex.Observable
 
 class Repository() {

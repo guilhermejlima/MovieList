@@ -1,11 +1,11 @@
-package com.arctouch.codechallenge.Details
+package com.guilherme.movieList.Details
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.arctouch.codechallenge.R
-import com.arctouch.codechallenge.data.Repository
-import com.arctouch.codechallenge.model.Movie
-import com.arctouch.codechallenge.util.MovieImageUrlBuilder
+import com.guilherme.movieList.R
+import com.guilherme.movieList.data.Repository
+import com.guilherme.movieList.model.Movie
+import com.guilherme.movieList.util.MovieImageUrlBuilder
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_details_movie.*
 

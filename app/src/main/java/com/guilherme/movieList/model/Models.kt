@@ -1,4 +1,4 @@
-package com.arctouch.codechallenge.model
+package com.guilherme.movieList.model
 
 import com.squareup.moshi.Json
 

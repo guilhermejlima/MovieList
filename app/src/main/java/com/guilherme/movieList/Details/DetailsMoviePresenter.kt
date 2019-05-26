@@ -1,10 +1,8 @@
-package com.arctouch.codechallenge.Details
+package com.guilherme.movieList.Details
 
-import com.arctouch.codechallenge.api.API_KEY
-import com.arctouch.codechallenge.api.Client
-import com.arctouch.codechallenge.api.DEFAULT_LANGUAGE
-import com.arctouch.codechallenge.api.TmdbApi
-import com.arctouch.codechallenge.data.Repository
+import com.guilherme.movieList.api.Client
+import com.guilherme.movieList.api.TmdbApi
+import com.guilherme.movieList.data.Repository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 

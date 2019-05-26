@@ -1,6 +1,6 @@
-package com.arctouch.codechallenge.util
+package com.guilherme.movieList.util
 
-import com.arctouch.codechallenge.api.API_KEY
+import com.guilherme.movieList.api.API_KEY
 
 private val POSTER_URL = "https://image.tmdb.org/t/p/w154"
 private val BACKDROP_URL = "https://image.tmdb.org/t/p/w780"

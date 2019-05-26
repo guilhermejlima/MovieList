@@ -1,4 +1,4 @@
-package com.arctouch.codechallenge.api
+package com.guilherme.movieList.api
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

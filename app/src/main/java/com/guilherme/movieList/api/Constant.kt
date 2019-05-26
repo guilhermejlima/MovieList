@@ -1,4 +1,4 @@
-package com.arctouch.codechallenge.api
+package com.guilherme.movieList.api
 
 const val URL = "https://api.themoviedb.org/3/"
 const val API_KEY = "1f54bd990f1cdfb230adb312546d765d"

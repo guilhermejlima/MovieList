@@ -1,9 +1,9 @@
-package com.arctouch.codechallenge.home
+package com.guilherme.movieList.home
 
 import android.view.View
-import com.arctouch.codechallenge.api.*
-import com.arctouch.codechallenge.data.Cache
-import com.arctouch.codechallenge.data.Repository
+import com.guilherme.movieList.api.*
+import com.guilherme.movieList.data.Cache
+import com.guilherme.movieList.data.Repository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 

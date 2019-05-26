@@ -1,6 +1,6 @@
-package com.arctouch.codechallenge.data
+package com.guilherme.movieList.data
 
-import com.arctouch.codechallenge.model.Genre
+import com.guilherme.movieList.model.Genre
 
 object Cache {
 

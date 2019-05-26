@@ -1,15 +1,14 @@
-package com.arctouch.codechallenge.home
+package com.guilherme.movieList.home
 
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.arctouch.codechallenge.Details.DetailsMovieActivity
-import com.arctouch.codechallenge.R
-import com.arctouch.codechallenge.model.Movie
-import com.arctouch.codechallenge.util.MovieImageUrlBuilder
+import com.guilherme.movieList.Details.DetailsMovieActivity
+import com.guilherme.movieList.R
+import com.guilherme.movieList.model.Movie
+import com.guilherme.movieList.util.MovieImageUrlBuilder
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.movie_item.view.*
