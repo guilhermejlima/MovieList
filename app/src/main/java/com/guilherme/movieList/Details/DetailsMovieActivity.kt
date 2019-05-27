@@ -8,9 +8,12 @@ import com.guilherme.movieList.model.Movie
 import com.guilherme.movieList.util.MovieImageUrlBuilder
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_details_movie.*
+import kotlinx.android.synthetic.main.activity_details_movie.progressBar
+import kotlinx.android.synthetic.main.home_activity.*
 
 
 class DetailsMovieActivity: AppCompatActivity(),DetailsMovieInterface.View {
+
 
 
     private val movieImageUrlBuilder = MovieImageUrlBuilder()
@@ -66,6 +69,10 @@ class DetailsMovieActivity: AppCompatActivity(),DetailsMovieInterface.View {
                 .load(posterImage)
                 .into(movie_cover)
 
+    }
+
+    override fun setProgressBar(status: Int) {
+        progressBar.visibility = status
     }
 
 

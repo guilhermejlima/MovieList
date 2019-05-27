@@ -1,5 +1,6 @@
 package com.guilherme.movieList.Details
 
+import android.view.View
 import com.guilherme.movieList.api.Client
 import com.guilherme.movieList.api.TmdbApi
 import com.guilherme.movieList.data.Repository
@@ -21,7 +22,10 @@ class DetailsMoviePresenter(
         repository.callMovie(api,view.receiveId())
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { result -> view.createDetailScreen(result) }
+                .subscribe {
+                    view.setProgressBar(View.GONE)
+                    view.createDetailScreen(it)
+                }
     }
 
 }

@@ -6,6 +6,7 @@ interface DetailsMovieInterface {
     interface View{
         fun createDetailScreen(movie:Movie)
         fun receiveId():Long
+        fun setProgressBar(status:Int)
     }
 
 }
