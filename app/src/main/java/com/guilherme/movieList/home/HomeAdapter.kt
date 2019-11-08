@@ -11,6 +11,7 @@ import com.guilherme.movieList.model.Movie
 import com.guilherme.movieList.util.MovieImageUrlBuilder
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.guilherme.movieList.util.converter
 import kotlinx.android.synthetic.main.movie_item.view.*
 
 class HomeAdapter(private val movies: List<Movie>) : androidx.recyclerview.widget.RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
@@ -22,7 +23,7 @@ class HomeAdapter(private val movies: List<Movie>) : androidx.recyclerview.widge
         fun bind(movie: Movie) {
             itemView.titleTextView.text = movie.title
             itemView.genresTextView.text = movie.genres?.joinToString(separator = ", ") { it.name }
-            itemView.releaseDateTextView.text = movie.releaseDate
+            itemView.releaseDateTextView.text = movie.releaseDate?.converter()
             itemView.cardMovie.setOnClickListener{
                 val detailIntent = Intent(itemView.context, DetailsMovieActivity::class.java)
                 detailIntent.putExtra("id",movie.id)
