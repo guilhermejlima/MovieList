@@ -1,5 +1,6 @@
 package com.guilherme.movieList.home
 
+import android.annotation.SuppressLint
 import android.view.View
 import com.guilherme.movieList.api.*
 import com.guilherme.movieList.data.Cache
@@ -18,7 +19,8 @@ class HomePresenter(private val view: HomeInterface.View){
         loadMovies(api, repository)
     }
 
-    private fun loadMovies(api: TmdbApi,repository: Repository){
+    @SuppressLint("CheckResult")
+    private fun loadMovies(api: TmdbApi, repository: Repository){
         repository.callListOfMovies(api,1)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -32,7 +34,8 @@ class HomePresenter(private val view: HomeInterface.View){
             }
     }
 
-    private fun loadGenres(api: TmdbApi,repository: Repository){
+    @SuppressLint("CheckResult")
+    private fun loadGenres(api: TmdbApi, repository: Repository){
         repository.callListOfGenres(api)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

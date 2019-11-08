@@ -1,5 +1,6 @@
 package com.guilherme.movieList.Details
 
+import android.annotation.SuppressLint
 import android.view.View
 import com.guilherme.movieList.api.Client
 import com.guilherme.movieList.api.TmdbApi
@@ -14,12 +15,14 @@ class DetailsMoviePresenter(
 
     fun onCreateCalled(repository: Repository){
         val client = Client()
-        val api = client.getClient().create(TmdbApi::class.java)
-        loadMovieDetail(api,repository)
+        client.getClient().create(TmdbApi::class.java).also {
+            loadMovieDetail(it,repository)
+        }
     }
 
+    @SuppressLint("CheckResult")
     fun loadMovieDetail(api:TmdbApi, repository: Repository){
-        repository.callMovie(api,view.receiveId())
+        repository.callMovie(api = api, id = view.receiveId())
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {

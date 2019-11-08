@@ -9,7 +9,7 @@ import com.guilherme.movieList.model.Movie
 import com.guilherme.movieList.model.UpcomingMoviesResponse
 import io.reactivex.Observable
 
-class Repository() {
+class Repository {
     fun callMovie(api:TmdbApi,id:Long):Observable<Movie>{
         return api.movie(id, API_KEY, DEFAULT_LANGUAGE)
     }

@@ -2,8 +2,8 @@ package com.guilherme.movieList.util
 
 import com.guilherme.movieList.api.API_KEY
 
-private val POSTER_URL = "https://image.tmdb.org/t/p/w154"
-private val BACKDROP_URL = "https://image.tmdb.org/t/p/w780"
+private const val POSTER_URL = "https://image.tmdb.org/t/p/w154"
+private const val BACKDROP_URL = "https://image.tmdb.org/t/p/w780"
 
 class MovieImageUrlBuilder {
 
